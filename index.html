@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clean responsive sidebar UI using HTML, CSS, and Bootstrap.">
+    <meta name="author" content="Alexandra Kirali">
+    <title>Responsive Sidebar UI | @alexandra_kr</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Monomaniac+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="wrapper" class="wrapper">
+        <!-- Backdrop for mobile sidebar -->
+        <div id="sidebarBackdrop" class="sidebar-backdrop d-md-none"></div>
+
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://cdn-icons-png.flaticon.com/512/10711/10711331.png" alt="Logo" class="logo">
+                <h3>Hyper</h3>
+            
+                <!-- Close Button for mobile -->
+                <button class="btn close-btn d-md-none ms-auto" id="closeSidebar" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M2 2 L14 14 M14 2 L2 14" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="sidebar-content">
+                <!-- Favorites Section -->
+                <div>
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-header" data-bs-toggle="collapse" data-bs-target="#favoritesCollapse">
+                            <span>FAVORITES</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse show" id="favoritesCollapse">
+                            <ul class="list-unstyled components">
+                                <li class="active">
+                                    <a href="#">
+                                        <i class="bi bi-house-door sidebar-icon"></i>
+                                        Dashboard
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-bookmark sidebar-icon" style="color: #82ACF8;"></i>
+                                        Bookmarks
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#pageSubmenu" data-bs-toggle="collapse" aria-expanded="false">
+                                        <i class="bi bi-graph-up-arrow sidebar-icon" style="color: #B279F8;"></i>
+                                        Reports
+                                        <i class="bi bi-chevron-down ms-auto"></i>
+                                    </a>
+                                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                                        <li><a href="#">Page 1</a></li>
+                                        <li><a href="#">Page 2</a></li>
+                                        <li><a href="#">Page 3</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-people sidebar-icon" style="color: #7FD79F;"></i>
+                                        Team
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-chat-dots sidebar-icon" style="color: #44C4DB;"></i>
+                                        Messages
+                                        <span class="badge-message">6</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-calendar sidebar-icon" style="color: #54C7BA;"></i>
+                                        Calendar
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-gear sidebar-icon" style="color: #F08AB8;"></i>
+                                        Settings
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Applications Section -->
+                    <div class="sidebar-section">
+                        <div class="sidebar-section-header" data-bs-toggle="collapse" data-bs-target="#applicationsCollapse">
+                            <span>APPLICATIONS</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="collapse show" id="applicationsCollapse">
+                            <ul class="list-unstyled components">
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-discord sidebar-icon" style="color: #07B6D4;"></i>
+                                        Discord
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-slack sidebar-icon" style="color: #B471F8;"></i>
+                                        Slack
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="bi bi-github sidebar-icon" style="color: #4588F6;"></i>
+                                        GitHub
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="dropup">
+                    <button class="btn dropdown-toggle" type="button" id="userDropdown" data-bs-toggle="dropdown">
+                        <img src="https://ui-avatars.com/api/?name=Alex+Kira&background=random&bold=true" alt="User" class="rounded-circle me-2" width="32">
+                        Alexandra
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Page Content -->
+        <div id="content">
+            <!-- Header -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <!-- Mobile Toggle -->
+                    <button class="btn btn-light d-md-none" id="mobileToggle" type="button" aria-label="Toggle sidebar">
+                        <i class="bi bi-list"></i>
+                    </button>
+
+                    <!-- Header Icons -->
+                    <div class="icon-group d-none d-md-flex">
+                        <i class="bi bi-inbox"></i>
+                        <div class="position-relative">
+                            <i class="bi bi-bell"></i>
+                            <span class="notification-dot"></span>
+                        </div>
+                        <i class="bi bi-gear"></i>
+                        <i class="bi bi-person"></i>
+                        <i class="bi bi-star"></i>
+                        <i class="bi bi-pen"></i>
+                    </div>
+
+                    <!-- Mobile Icons Dropdown -->
+                    <div class="dropdown d-md-none">
+                        <button class="btn btn-link" type="button" id="mobileIconsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-three-dots-vertical"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-inbox me-2"></i>Inbox</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-bell me-2"></i>Notifications</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Profile</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-star me-2"></i>Favorites</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="bi bi-pen me-2"></i>Notes</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Dark Mode Toggle -->
+                    <div class="ms-auto">
+                        <button class="btn btn-link" id="darkModeToggle">
+                            <i class="bi bi-moon"></i>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Main Content -->
+            <div class="container-fluid">
+                <div class="content-wrapper">
+                    <h2>Dashboard</h2>
+                    <p>Welcome! This is the main content area.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+</html> 
